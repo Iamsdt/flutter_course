@@ -26,14 +26,23 @@ class _State extends State<MyApp> {
         title: new Text('Name here'),
       ),
       body: new Container(
-        padding: new EdgeInsets.all(32.0),
-        child: new Column(
-          children: <Widget>[
-
-            new Checkbox(value: _value1, onChanged: _value1Changed),
-
-          ],
-        ),
+          padding: new EdgeInsets.all(32.0),
+          child: new Center(
+            child: new Column(
+              children: <Widget>[
+                new Checkbox(value: _value1, onChanged: _value1Changed),
+                new CheckboxListTile(
+                  value: _value2,
+                  onChanged: _value2Changed,
+                  title: new Text('Hello World'),
+                  controlAffinity: ListTileControlAffinity.leading,
+                  subtitle: new Text('Subtitle'),
+                  secondary: new Icon(Icons.archive),
+                  activeColor: Colors.red,
+                )
+              ],
+            ),
+          )
       ),
     );
   }
